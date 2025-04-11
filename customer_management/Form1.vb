@@ -41,7 +41,7 @@ Public Class Form1
                 dml.ExecuteNonQuery()
                 MessageBox.Show("Lưu thành công!")
                 LoadData()
-
+                actClear()
             End Using
 
         Catch ex As Exception
@@ -68,6 +68,15 @@ Public Class Form1
         Finally
             connection.Close()
         End Try
+    End Sub
+
+    Private Sub actClear()
+        txtCustomerName.Clear()
+        txtAddress.Clear()
+        txtPhone.Clear()
+        txtEmail.Clear()
+        txtCustomerName.Focus()
+        comboGender.SelectedIndex = -1
     End Sub
 
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
@@ -104,7 +113,7 @@ Public Class Form1
                     dml.ExecuteNonQuery()
                     MessageBox.Show("Đã xóa!")
                     LoadData()
-
+                    actClear()
                 End Using
 
             Catch ex As Exception
@@ -118,12 +127,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClear.Click
-        txtCustomerName.Clear()
-        txtAddress.Clear()
-        txtPhone.Clear()
-        txtEmail.Clear()
-        txtCustomerName.Focus()
-        comboGender.SelectedIndex = -1
+        actClear()
     End Sub
 
     Private Sub customerView_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles customerView.CellClick
