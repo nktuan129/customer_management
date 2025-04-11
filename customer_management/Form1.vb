@@ -122,6 +122,7 @@ Public Class Form1
         txtAddress.Clear()
         txtPhone.Clear()
         txtEmail.Clear()
+        txtCustomerName.Focus()
         comboGender.SelectedIndex = -1
     End Sub
 
