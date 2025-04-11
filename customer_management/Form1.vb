@@ -96,7 +96,7 @@ Public Class Form1
             Dim id As Integer = customerView.SelectedRows(0).Cells("id").Value
             Try
                 connection.Open()
-                sql = "DELETE FROM customers WHERE id=?"
+                sql = "DELETE FROM customers WHERE id= ?"
 
                 Using dml As New OdbcCommand(sql, connection)
 
