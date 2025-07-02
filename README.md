@@ -1,2 +1,0 @@
-# customer_management
-customer_management
